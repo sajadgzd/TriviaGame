@@ -59,6 +59,21 @@ $(document).ready(function() {
         $(".gif-screen").html("<img src='https://media.giphy.com/media/26AHC0kdj8IeLkmBy/giphy.gif' class='endGif'>");
     }
 
+    var replaceOptions = "";
+
+    function countdown() {
+        if (timeLeft === 0) {} else {
+
+        }
+    }
+
+    function game() {
+        if (number < questions.length) {} else {
+
+        }
+
+    }
+
 
     function reset() {
         $(".restart").hide();
@@ -71,6 +86,14 @@ $(document).ready(function() {
         number = 0;
         game();
     }
+
+    $(".restart").hide();
+
+    $(".start").on("click", function() {
+
+        $(this).hide();
+        game();
+    });
 
     $(".restart").on("click", function() {
         reset();
