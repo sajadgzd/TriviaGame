@@ -61,7 +61,6 @@ $(document).ready(function() {
         } else {
             timeLeft--;
             $(".timer").text("Time Remaining: " + timeLeft + " Seconds");
-
         }
     }
 
