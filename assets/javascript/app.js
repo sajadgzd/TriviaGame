@@ -43,15 +43,8 @@ $(document).ready(function() {
     var number = 0;
 
     var questions = [q0.question, q1.question, q2.question, q3.question, q4.question];
-    console.log(questions);
-
     var answerOptions = [q0.answerChoices, q1.answerChoices, q2.answerChoices, q3.answerChoices, q4.answerChoices];
-
     var answers = [q0.answer, q1.answer, q2.answer, q3.answer, q4.answer]
-
-
-
-
 
 
     function winPage() {
