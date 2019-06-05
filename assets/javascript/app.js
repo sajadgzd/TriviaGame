@@ -25,11 +25,11 @@ $(document).ready(function() {
         answerChoices: ["A. It's Saturday. No more reasoning required", "B. He aced another mid-term", "C. He messed up another bell curve on an exam", "D. Seven years and no black-outs"],
         answer: "D.",
     }
-    var timeLeft = 10;
-    var losses = 0;
-    var wins = 0;
-    var timesUp = 0;
-    var number = 0;
+    var timeLeft = 10; // # of seconds left
+    var losses = 0; // # of wrong answers
+    var wins = 0; // # of right answers
+    var timesUp = 0; // the number of non-answered
+    var number = 0; // the number of the question
 
     var questions = [q0.question, q1.question, q2.question, q3.question, q4.question];
     var answerOptions = [q0.answerChoices, q1.answerChoices, q2.answerChoices, q3.answerChoices, q4.answerChoices];
@@ -50,7 +50,17 @@ $(document).ready(function() {
     var replaceOptions = "";
 
     function countdown() {
-        if (timeLeft === 0) {} else {
+        if (timeLeft === 0) {
+            clearInterval(intervalId);
+            $(".timer").text("Time Remaining: " + timeLeft + " Seconds");
+            $(".results").text("Times Up! The correct answer is: " + answers[number]);
+            losePage();
+            timesUp++;
+            number++;
+            setTimeout(game, 3000);
+        } else {
+            timeLeft--;
+            $(".timer").text("Time Remaining: " + timeLeft + " Seconds");
 
         }
     }
