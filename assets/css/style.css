@@ -1,0 +1,59 @@
+.buttons {
+    width: 50%;
+    height: 50%;
+}
+
+h1 {
+    text-align: center;
+    color: lightyellow;
+}
+
+.timer,
+.question,
+.results,
+.gif-screen,
+.correct,
+.incorrect,
+.unanswered,
+.start-button,
+.restart-button {
+    text-align: center;
+    font-family: 'Indie Flower', cursive, sans-serif;
+    font-size: 20px;
+}
+
+.winGif,
+.loseGif,
+.endGif {
+    width: 50%;
+    height: 100%;
+}
+
+.wallpaper {
+    background-image: url("../images/1.jpg");
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.timer {
+    color: yellow;
+}
+
+.scoreboard {
+    margin: 0 auto;
+    /*centers elements*/
+    background-color: white;
+    width: 50%;
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 1152px) {
+    .wallpaper {
+        background-size: 100% 100%;
+        min-width: 100%;
+        min-height: 100%;
+    }
+}
