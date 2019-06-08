@@ -17,6 +17,7 @@ h1 {
 .unanswered,
 .start-button,
 .restart-button {
+    color: white;
     text-align: center;
     font-family: 'Indie Flower', cursive, sans-serif;
     font-size: 20px;

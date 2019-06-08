@@ -25,7 +25,7 @@ $(document).ready(function() {
         answerChoices: ["A. It's Saturday. No more reasoning required", "B. He aced another mid-term", "C. He messed up another bell curve on an exam", "D. Seven years and no black-outs"],
         answer: "D.",
     }
-    var timeLeft = 10; // # of seconds left
+    var timeLeft = 3; // # of seconds left
     var losses = 0; // # of wrong answers
     var wins = 0; // # of right answers
     var timesUp = 0; // the number of non-answered
@@ -48,6 +48,7 @@ $(document).ready(function() {
     }
 
     var replaceOptions = "";
+    var intervalId;
 
     function countdown() {
         if (timeLeft === 0) {
@@ -65,7 +66,11 @@ $(document).ready(function() {
     }
 
     function game() {
-        if (questionNumber < questions.length) {} else {
+        if (questionNumber < questions.length) {
+            intervalId = setInterval(countdown, 1000);
+
+
+        } else {
 
         }
 
@@ -88,7 +93,7 @@ $(document).ready(function() {
 
     $(".start").on("click", function() {
 
-        $(this).hide();
+        $(this).remove();
         game();
     });
 
