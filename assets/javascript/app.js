@@ -69,7 +69,7 @@ $(document).ready(function() {
         if (questionNumber < questions.length) {
             $(".gif-screen").empty();
             $(".results").empty();
-            timeLeft = 3;
+            timeLeft = 10;
             intervalId = setInterval(countdown, 1000);
             $(".question").html("<h2>" + questions[questionNumber] + "</h2>");
             for (let i = 0; i < answerOptions[questionNumber].length; i++) {
