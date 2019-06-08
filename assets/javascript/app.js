@@ -138,6 +138,4 @@ $(document).ready(function() {
         reset();
     });
 
-
-
 });
