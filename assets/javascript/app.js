@@ -54,11 +54,11 @@ $(document).ready(function() {
             clearInterval(intervalId);
             $(".buttons").remove();
             $(".timer").text("Time Remaining: " + timeLeft + " Seconds");
-            $(".results").text("Times Up! The correct answer is: " + answers[questionNumber]);
+            $(".results").html("<h4> Times Up! The correct answer is: <br>  " + answers[questionNumber] + "</h4>");
             losePage();
             timesUp++;
             questionNumber++;
-            setTimeout(game, 1000);
+            setTimeout(game, 3000);
         } else {
             timeLeft--;
             $(".timer").text("Time Remaining: " + timeLeft + " Seconds");
@@ -80,22 +80,21 @@ $(document).ready(function() {
                 console.log($(this).attr("value"));
                 console.log(answers[questionNumber]);
                 if ($(this).val() === answers[questionNumber]) {
-
                     clearInterval(intervalId);
                     $(".buttons").remove();
-                    $(".results").html("That's Correct! The answer is: <br> " + answers[questionNumber]);
+                    $(".results").html("<h4> That's Correct! The answer is: <br> " + answers[questionNumber] + "</h4>");
                     winPage();
                     wins++;
                     questionNumber++;
-                    setTimeout(game, 1000);
+                    setTimeout(game, 3000);
                 } else {
                     clearInterval(intervalId);
                     $(".buttons").remove();
-                    $(".results").html("Wrong! The correct answer is: <br>" + answers[questionNumber]);
+                    $(".results").html(" <h4> Wrong! The correct answer is: <br>" + answers[questionNumber] + "</h4>");
                     losePage();
                     losses++;
                     questionNumber++;
-                    setTimeout(game, 1000);
+                    setTimeout(game, 3000);
                 }
 
             });
@@ -103,7 +102,7 @@ $(document).ready(function() {
 
         } else {
             clearInterval(intervalId);
-            $(".results").text("Game Over! Press Restart to Play Again!");
+            $(".results").html("<h4> Game Over! Press Restart to Play Again! </h4>");
             endPage();
             $(".question").empty();
             $(".scoreboard").append("<p> Unanswered: " + timesUp + "</p>");
