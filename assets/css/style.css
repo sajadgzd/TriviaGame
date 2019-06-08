@@ -55,6 +55,6 @@ h1 {
     .wallpaper {
         background-size: 100% 100%;
         min-width: 100%;
-        min-height: 100%;
+        min-height: 600px;
     }
 }
