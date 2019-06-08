@@ -29,7 +29,7 @@ $(document).ready(function() {
     var losses = 0; // # of wrong answers
     var wins = 0; // # of right answers
     var timesUp = 0; // the number of non-answered
-    var number = 0; // the number of the question
+    var questionNumber = 0; // the number of the question
 
     var questions = [q0.question, q1.question, q2.question, q3.question, q4.question];
     var answerOptions = [q0.answerChoices, q1.answerChoices, q2.answerChoices, q3.answerChoices, q4.answerChoices];
@@ -53,10 +53,10 @@ $(document).ready(function() {
         if (timeLeft === 0) {
             clearInterval(intervalId);
             $(".timer").text("Time Remaining: " + timeLeft + " Seconds");
-            $(".results").text("Times Up! The correct answer is: " + answers[number]);
+            $(".results").text("Times Up! The correct answer is: " + answers[questionNumber]);
             losePage();
             timesUp++;
-            number++;
+            questionNumber++;
             setTimeout(game, 3000);
         } else {
             timeLeft--;
@@ -65,7 +65,7 @@ $(document).ready(function() {
     }
 
     function game() {
-        if (number < questions.length) {} else {
+        if (questionNumber < questions.length) {} else {
 
         }
 
@@ -80,7 +80,7 @@ $(document).ready(function() {
         $(".correct").text("");
         timesUp = 0;
         $(".unanswered").text("");
-        number = 0;
+        questionNumber = 0;
         game();
     }
 
