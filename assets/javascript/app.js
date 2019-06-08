@@ -47,18 +47,18 @@ $(document).ready(function() {
         $(".gif-screen").html("<img src='https://media.giphy.com/media/26AHC0kdj8IeLkmBy/giphy.gif' class='endGif'>");
     }
 
-    var replaceOptions = "";
     var intervalId;
 
     function countdown() {
         if (timeLeft === 0) {
             clearInterval(intervalId);
+            $(".buttons").remove();
             $(".timer").text("Time Remaining: " + timeLeft + " Seconds");
             $(".results").text("Times Up! The correct answer is: " + answers[questionNumber]);
             losePage();
             timesUp++;
             questionNumber++;
-            setTimeout(game, 3000);
+            setTimeout(game, 1000);
         } else {
             timeLeft--;
             $(".timer").text("Time Remaining: " + timeLeft + " Seconds");
@@ -87,7 +87,7 @@ $(document).ready(function() {
                     winPage();
                     wins++;
                     questionNumber++;
-                    setTimeout(game, 3000);
+                    setTimeout(game, 1000);
                 } else {
                     clearInterval(intervalId);
                     $(".buttons").remove();
@@ -95,7 +95,7 @@ $(document).ready(function() {
                     losePage();
                     losses++;
                     questionNumber++;
-                    setTimeout(game, 3000);
+                    setTimeout(game, 1000);
                 }
 
             });
@@ -105,6 +105,7 @@ $(document).ready(function() {
             clearInterval(intervalId);
             $(".results").text("Game Over! Press Restart to Play Again!");
             endPage();
+            $(".scoreboard").show();
             $(".question").empty();
             $(".unanswered").text("Unanswered: " + timesUp);
             $(".correct").text("Correct: " + wins);
@@ -117,13 +118,14 @@ $(document).ready(function() {
 
 
     function reset() {
+
         $(".restart").hide();
         losses = 0;
-        $(".incorrect").text("");
+        $(".incorrect").empty();
         wins = 0;
-        $(".correct").text("");
+        $(".correct").empty();
         timesUp = 0;
-        $(".unanswered").text("");
+        $(".unanswered").empty();
         questionNumber = 0;
         game();
     }
