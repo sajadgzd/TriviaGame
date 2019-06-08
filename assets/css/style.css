@@ -1,9 +1,15 @@
+.container {
+    margin: 20px auto;
+    text-align: center;
+}
+
 .buttons {
     width: 50%;
     height: 50%;
 }
 
 h1 {
+    margin: 0 auto;
     text-align: center;
     color: lightyellow;
 }
@@ -12,22 +18,22 @@ h1 {
 .question,
 .results,
 .gif-screen,
-.correct,
-.incorrect,
-.unanswered,
 .start-button,
 .restart-button {
     color: white;
     text-align: center;
+    margin: 0 auto;
     font-family: 'Indie Flower', cursive, sans-serif;
     font-size: 20px;
+    display: block;
+    font-weight: bold;
 }
 
 .winGif,
 .loseGif,
 .endGif {
-    width: 50%;
-    height: 100%;
+    width: 400px;
+    height: 300px;
 }
 
 .wallpaper {
@@ -40,16 +46,23 @@ h1 {
 }
 
 .timer {
+    /* display: block; */
     color: yellow;
 }
 
 .scoreboard {
-    margin: 0 auto;
-    /*centers elements*/
-    background-color: black;
-    /* color: black; */
-    width: 50%;
-    /* opacity: 0.6; */
+    color: white;
+    text-align: center;
+    font-family: 'Indie Flower', cursive, sans-serif;
+    background-color: rgb(26, 24, 24);
+    width: 40%;
+    margin-left: 30%;
+    /* padding: 10px; */
+}
+
+p {
+    width: 100%;
+    font-size: 20px;
 }
 
 @media screen and (max-width: 1152px) {

@@ -105,11 +105,10 @@ $(document).ready(function() {
             clearInterval(intervalId);
             $(".results").text("Game Over! Press Restart to Play Again!");
             endPage();
-            $(".scoreboard").show();
             $(".question").empty();
-            $(".unanswered").text("Unanswered: " + timesUp);
-            $(".correct").text("Correct: " + wins);
-            $(".incorrect").text("Incorrect: " + losses);
+            $(".scoreboard").append("<p> Unanswered: " + timesUp + "</p>");
+            $(".scoreboard").append("<p> Correct: " + wins + "</p>");
+            $(".scoreboard").append("<p> Incorrect: " + losses + "</p>");
 
             $(".restart").show();
         }
