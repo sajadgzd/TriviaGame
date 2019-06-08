@@ -82,6 +82,7 @@ $(document).ready(function() {
                 if ($(this).val() === answers[questionNumber]) {
 
                     clearInterval(intervalId);
+                    $(".buttons").remove();
                     $(".results").html("That's Correct! The answer is: <br> " + answers[questionNumber]);
                     winPage();
                     wins++;
@@ -89,6 +90,7 @@ $(document).ready(function() {
                     setTimeout(game, 3000);
                 } else {
                     clearInterval(intervalId);
+                    $(".buttons").remove();
                     $(".results").html("Wrong! The correct answer is: <br>" + answers[questionNumber]);
                     losePage();
                     losses++;
@@ -99,13 +101,16 @@ $(document).ready(function() {
             });
 
 
-
-
         } else {
             clearInterval(intervalId);
             $(".results").text("Game Over! Press Restart to Play Again!");
-
             endPage();
+            $(".question").empty();
+            $(".unanswered").text("Unanswered: " + timesUp);
+            $(".correct").text("Correct: " + wins);
+            $(".incorrect").text("Incorrect: " + losses);
+
+            $(".restart").show();
         }
 
     }
