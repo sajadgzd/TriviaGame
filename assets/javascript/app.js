@@ -119,12 +119,10 @@ $(document).ready(function() {
     function reset() {
 
         $(".restart").hide();
+        $(".scoreboard").empty();
         losses = 0;
-        $(".incorrect").empty();
         wins = 0;
-        $(".correct").empty();
         timesUp = 0;
-        $(".unanswered").empty();
         questionNumber = 0;
         game();
     }
